@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { fighter } from '../../../models/fighter';
 
+import { ModalService } from '../../../services/modal.service';
+
 @Component({
   selector: 'app-fighterd',
   templateUrl: './fighterd.component.html',
@@ -9,21 +11,18 @@ import { fighter } from '../../../models/fighter';
 })
 export class FighterdComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: ModalService) { }
 
   ngOnInit() {
-
+  	console.log(this.fighter);
   }
 
-  @Input() firstName: string;
-  @Input() lastName: string;
-  @Input() picture: string;
-  @Input() wins: string;
-  @Input() losses: string;
-  @Input() weight: string;
-  @Input() nickName: string = ' ';
-  @Input() active: string;
+  @Input() fighter: fighter;
 
+  openFullImage() {
+  	//alert('it works');
 
+    this.modalService.openModal('hi');
+  }
 
 }
