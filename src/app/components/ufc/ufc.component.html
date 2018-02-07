@@ -1,0 +1,30 @@
+
+<!-- 
+<canvas class="my-4 chartjs-render-monitor" id="myChart" width="1181" height="498" style="display: block; width: 1181px; height: 498px;"></canvas> -->
+
+<div class="table-responsive col-sm-12" >
+
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" #ctrl="ngModel" [(ngModel)]="searchFighters">
+  <br> 
+  <div *ngFor="let fighter of fighters" >
+    <!-- {{fighter}} -->
+    <app-fighterd 
+      firstName="{{fighter.first_name}}"
+      lastName="{{fighter.last_name}}"
+      picture="{{fighter.profile_image}}"
+      wins="{{fighter.wins}}"
+      losses="{{fighter.losses}}"
+      weight="{{fighter.weight_class}}"
+      nickName="{{fighter.nickname}}"
+      active="{{fighter.fighter_status}}"
+    ></app-fighterd>
+    <!-- <td>{{fighter.first_name + ' ' + fighter.last_name}}</td>
+    <td>{{fighter.pound_for_pound_rank}}</td>
+    <td>{{fighter.wins}}</td>
+    <td>{{fighter.losses}}</td>
+    <td>{{fighter.id}}</td> -->
+  </div>
+    
+  
+</div>
+   
